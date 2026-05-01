@@ -2,7 +2,7 @@
 
 .dashboard {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--bg);
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -16,9 +16,9 @@
 
 /* Header */
 .header {
-  background-color: #ffffff;
+  background-color: var(--surface);
   padding: 15px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--shadow);
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -28,9 +28,15 @@
 
 .app-title {
   margin: 0;
-  color: #333;
+  color: var(--text-h);
   font-size: 24px;
   font-weight: bold;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--text);
+  font-size: 14px;
 }
 
 .header-right {
@@ -41,11 +47,28 @@
 
 .user-name {
   font-weight: 500;
+  color: var(--text);
 }
 
-.notification-icon, .profile-icon {
+.notification-icon,
+.profile-icon {
   font-size: 20px;
   cursor: pointer;
+}
+
+.theme-toggle {
+  background: var(--surface-strong);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
 }
 
 /* Summary Cards */
@@ -55,7 +78,7 @@
 
 .summary-cards h2 {
   margin-bottom: 15px;
-  color: #333;
+  color: var(--text-h);
 }
 
 .cards-grid {
@@ -65,10 +88,10 @@
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: var(--surface);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--shadow);
   display: flex;
   align-items: center;
   gap: 15px;
@@ -81,12 +104,12 @@
 .card-content h3 {
   margin: 0;
   font-size: 32px;
-  color: #333;
+  color: var(--text-h);
 }
 
 .card-content p {
   margin: 5px 0 0 0;
-  color: #666;
+  color: var(--text);
   font-size: 14px;
 }
 
@@ -97,7 +120,7 @@
 
 .maturity-alerts h2 {
   margin-bottom: 15px;
-  color: #333;
+  color: var(--text-h);
 }
 
 .alerts-container {
@@ -107,16 +130,16 @@
 }
 
 .alert-section {
-  background-color: #ffffff;
+  background-color: var(--surface);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--shadow);
 }
 
 .alert-section h3 {
   margin-top: 0;
-  color: #333;
-  border-bottom: 1px solid #eee;
+  color: var(--text-h);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 10px;
 }
 
@@ -131,7 +154,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border);
 }
 
 .item-info {
@@ -142,16 +165,16 @@
 
 .item-type {
   font-weight: bold;
-  color: #333;
+  color: var(--text-h);
 }
 
 .item-number, .item-date, .item-provider {
   font-size: 12px;
-  color: #666;
+  color: var(--text);
 }
 
 .btn-renew {
-  background-color: #4CAF50;
+  background-color: var(--accent);
   color: white;
   border: none;
   padding: 5px 10px;
@@ -161,7 +184,7 @@
 }
 
 .btn-renew:hover {
-  background-color: #45a049;
+  background-color: rgba(109, 40, 217, 0.85);
 }
 
 /* Quick Actions */
@@ -171,7 +194,7 @@
 
 .quick-actions h2 {
   margin-bottom: 15px;
-  color: #333;
+  color: var(--text-h);
 }
 
 .actions-grid {
@@ -181,8 +204,8 @@
 }
 
 .action-btn {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
   padding: 15px;
   border-radius: 8px;
   cursor: pointer;
@@ -193,7 +216,7 @@
 }
 
 .action-btn:hover {
-  background-color: #f9f9f9;
+  background-color: var(--surface-strong);
 }
 
 .action-icon {
@@ -202,7 +225,7 @@
 
 .action-label {
   font-weight: 500;
-  color: #333;
+  color: var(--text-h);
 }
 
 /* Recent Activity */
@@ -212,16 +235,16 @@
 
 .recent-activity h2 {
   margin-bottom: 15px;
-  color: #333;
+  color: var(--text-h);
 }
 
 .activity-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: var(--surface);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--shadow);
 }
 
 .activity-item {
@@ -229,7 +252,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border);
 }
 
 .activity-item:last-child {
@@ -238,15 +261,16 @@
 
 .activity-type {
   font-weight: bold;
-  color: #333;
+  color: var(--text-h);
   text-transform: capitalize;
 }
 
 .activity-item {
-  color: #666;
+  color: var(--text);
 }
 
 .activity-date {
-  color: #999;
+  color: var(--text);
+  opacity: 0.7;
   font-size: 12px;
 }
